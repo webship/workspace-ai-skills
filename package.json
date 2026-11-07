@@ -1,0 +1,50 @@
+{
+  "name": "@webship/workspace-ai-skills",
+  "version": "1.0.0",
+  "description": "The AI Skills workspace for Webship Workspace: the `ai-skills/` folder (type ai-items), its settings file, its 3 commands and its docs, activated as a plugin.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "private": true,
+  "license": "ISC",
+  "repository": "github:webship/workspace-ai-skills",
+  "files": [
+    "dist/src",
+    "commands",
+    "config",
+    "docs",
+    "features",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "workspacePlugin": {
+    "name": "ai-skills",
+    "label": "AI Skills",
+    "workspace": {
+      "key": "ai-skills",
+      "settingsTemplate": "config/workspace.ai-skills.settings.yml",
+      "files": [
+        "commands/cmd-tool-backup-skill.sh",
+        "commands/cmd-tool-sync-skills.sh",
+        "commands/cmd-tools-ai-items.sh"
+      ],
+      "docs": [
+        "docs/AGENTS.md",
+        "docs/CLAUDE.md",
+        "docs/README.md"
+      ]
+    },
+    "features": [
+      "features/ai-skills.feature"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@webship/workspace-plugin-api": "github:webship/workspace-plugin-api#1.0.x",
+    "typescript": "^5.9.0"
+  }
+}
