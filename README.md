@@ -1,4 +1,4 @@
-# @webship/workspace-ai-skills
+# @webship.co/workspace-ai-skills
 
 The **AI Skills** workspace of the [Webship Workspace](https://github.com/webship/workspace) dashboard:
 the `ai-skills/` folder (type `ai-items`), its settings file (`core/config/workspace.ai-skills.settings.yml`),
