@@ -4,9 +4,10 @@ Feature: The AI Skills workspace plugin
 
   Scenario: The workspace page is there
     Given I am on "/ai-skills"
-     Then I should see "AI Skills"
+     Then the element "h1" should be displayed
+      And the element "#webship-workspace-projects, .items-list, .workspace-page" should be attached
 
   Scenario: The plugin is listed on the Plugins page
     Given I am on "/settings/plugins"
      Then I should see "AI Skills"
-      And I should see "@webship/workspace-ai-skills"
+      And I should see "@webship.co/workspace-ai-skills"
