@@ -1,7 +1,7 @@
 {
   "name": "@webship.co/workspace-ai-skills",
   "version": "1.0.0-alpha1",
-  "description": "The AI Skills workspace for Webship Workspace: the `ai-skills/` folder (type ai-items), its settings file, its 0 commands and its docs, activated as a plugin.",
+  "description": "The AI Skills workspace for Webship Workspace: the `ai-skills/` folder (type ai-items), its settings file, its 3 commands and its docs, activated as a plugin.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "license": "ISC",
@@ -29,7 +29,11 @@
     "workspace": {
       "key": "ai-skills",
       "settingsTemplate": "config/workspace.ai-skills.settings.yml",
-      "files": [],
+      "files": [
+        "commands/cmd-tool-backup-skill.sh",
+        "commands/cmd-tool-sync-skills.sh",
+        "commands/cmd-tools-ai-items.sh"
+      ],
       "docs": [
         "docs/AGENTS.md",
         "docs/CLAUDE.md",
