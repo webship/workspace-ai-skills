@@ -16,6 +16,23 @@ bash core/scripts/plugins.sh --install ai-skills      # the folder, its settings
 The settings file and the docs are placed once and never overwritten: they hold what you put there.
 `--deactivate` takes the workspace off the list; the folder and its content stay.
 
+## What it goes with
+
+The folder needs no other plugin. Its items of the other kinds land in the other AI folders (`ai-agents`, `ai-commands`, `ai-prompts`), which the manifest suggests and never adds: the four AI folders cannot need each other, a circle of needs is refused. While one of them is not an active workspace folder, `--install` says `skipped` for that kind and the items are placed, with no second step, once the folder is activated.
+
+## The AI items
+
+The plugin carries its own AI items (`ai/` in the package, the manifest's `ai` block), written for the work this folder is for. `--install` places each one in the workspace folder of its kind, when that folder is an active workspace folder; `--uninstall` removes them, and keeps one that was edited in its folder.
+
+| Item | Kind | Lands in | What it is for |
+| --- | --- | --- | --- |
+| `ai-skills-keeper` | Agent | `ai-agents/ai-skills-keeper.md` | Looks after the skills of `ai-skills/` with `cmd-tools-ai-items.sh`: what is where, pull, add from a repository, install, check, update, copy to adapt, propose back, back up |
+| `ai-skills-workflow` | Skill | `ai-skills/ai-skills-workflow/` | How work is done in `ai-skills/`: the shape of a skill, the order of work, every flag of `cmd-tools-ai-items.sh`, the settings keys; itself the example of a skill |
+| `/ai-skills-install` | Command | `ai-commands/ai-skills-install.md` | `/ai-skills-install <skill> [<workspace>/<project>]`: reads the skill, installs it and checks what is installed |
+| `ai-skills-write-a-new-skill` | Prompt | `ai-prompts/ai-skills-write-a-new-skill.md` | A new session that writes a new skill in the shape the folder lists |
+
+From its folder an item is installed into the AI CLI (Claude Code by default) like any other: the folder's page on the dashboard, or `bash cmd-tools-ai-items.sh <name> --install` in the folder (`--to dev/<project>` for one project). A prompt is not installed: the New screen form lists it as the start of a new session. The body of every item is plain Markdown any AI CLI can follow; Claude Code is the default shape (the frontmatter, the launch line of a prompt). Every command, flag, settings key and path an item names is checked by `tests/items.test.ts`; the shape of the items is the one of the reference, [`docs/plugin-items-pattern.md` of the WordPress plugin](https://github.com/webship/workspace-wordpress/blob/1.0.x/docs/plugin-items-pattern.md).
+
 ## The commands
 
 | Command |
