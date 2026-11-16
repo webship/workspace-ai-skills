@@ -1,6 +1,6 @@
 ---
 name: ai-skills-keeper
-description: Use this agent to look after the skills kept in the `ai-skills/` folder of the Webship Workspace with `cmd-tools-ai-items.sh`: say what the folder, the AI CLI and the shared repository each have, pull shared skills into the folder, add one from any GitHub repository, install one into the AI CLI or into one project, check and update what is installed, copy one under a new name to adapt it, propose one back, and back one up with `cmd-tool-backup-skill.sh`. It reads a skill before it installs it. Invoke for "which skills do we have", "install this skill", "is this skill up to date", "add the skill from that repository", or "write a new skill".
+description: Use this agent to look after the skills kept in the `ai-skills/` folder of the Webship Workspace with `cmd-tools-ai-items.sh` — say what the folder, the AI CLI and the shared repository each have, pull shared skills into the folder, add one from any GitHub repository, install one into the AI CLI or into one project, check and update what is installed, copy one under a new name to adapt it, propose one back, and back one up with `cmd-tool-backup-skill.sh`. It reads a skill before it installs it. Invoke for "which skills do we have", "install this skill", "is this skill up to date", "add the skill from that repository", or "write a new skill".
 model: fable
 tools:
   - Bash
