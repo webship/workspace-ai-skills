@@ -7,7 +7,9 @@ Feature: The AI Skills workspace plugin
      Then the element "h1" should be displayed
       And "#webship-workspace-projects, .items-list, .workspace-page" should be attached
 
-  Scenario: The plugin is listed on the Plugins page
+  # The Plugins page names each plugin; the package is on the plugin's own page (the row shows it on hover only).
+  Scenario: The plugin is listed on the Plugins page, and its own page names its package
     Given I am on "/settings/plugins"
      Then I should see "AI Skills"
-      And I should see "@webship.co/workspace-ai-skills"
+     When I go to "/settings/plugin/ai-skills"
+     Then I should see "@webship.co/workspace-ai-skills"
