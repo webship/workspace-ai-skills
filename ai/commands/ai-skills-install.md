@@ -1,5 +1,5 @@
 ---
-description: Install a skill of the ai-skills/ folder of the Webship Workspace into the AI CLI, or into one project, with cmd-tools-ai-items.sh: read it first, install it, and check that what is installed is what the folder has.
+description: Install a skill of the ai-skills/ folder of the Webship Workspace into the AI CLI, or into one project, with cmd-tools-ai-items.sh — read it first, install it, and check that what is installed is what the folder has.
 argument-hint: '<skill> [<workspace>/<project>]'
 ---
 
